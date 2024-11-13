@@ -9,10 +9,23 @@ const QuestionSchema = new mongoose.Schema({
   },
   questionText: { type: String, required: true },
   similarText: {type: String, required: true},
-  answers: [{ type: String, required: true }],
-  similarAnswer: [{ type: String, required: true }],
-  correctAnswer: { type: Number, required: true },
-similarCorrect: { type: Number, required: true },
+ answers: {
+    type: [String],
+    required: true,
+  },
+  similarAnswer: {
+    type: [String],
+    required: true,
+  },
+  
+correctAnswer: {
+    type: Number,
+    required: true,
+  },
+  similarCorrect: {
+    type: Number,
+    required: true,
+  },
   difficulty: {
     type: String,
     enum: ["Easy", "Medium", "Hard"],
