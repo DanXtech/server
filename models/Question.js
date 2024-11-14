@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
@@ -8,8 +7,8 @@ const QuestionSchema = new mongoose.Schema({
     required: true,
   },
   questionText: { type: String, required: true },
-  similarText: {type: String, required: true},
- answers: {
+  similarText: { type: String, required: true },
+  answers: {
     type: [String],
     required: true,
   },
@@ -17,8 +16,7 @@ const QuestionSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
-  
-correctAnswer: {
+  correctAnswer: {
     type: Number,
     required: true,
   },
