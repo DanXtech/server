@@ -14,29 +14,9 @@ exports.addChapter = async (req, res) => {
 // Endpoint to create a question
 exports.addQuestion = async (req, res) => {
   try {
-    const {
-      chapterId,
-      questionText,
-      options,
-      answers,
-      correctAnswer,
-      difficulty,
-      hint,
-      chapter,
-      page,
-    } = req.body;
+    const quizData = req.body;
 
-    const question = new Question({
-      chapterId,
-      questionText,
-      options,
-      answers,
-      correctAnswer,
-      difficulty,
-      hint,
-      chapter,
-      page,
-    });
+    const question = new Question(quizData);
 
     const savedQuestion = await question.save();
     res.json(savedQuestion);
